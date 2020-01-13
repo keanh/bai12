@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển đơn giản</title>
+</head>
+<body>
+
+<input type="text" id="word" value="">
+<input type="button" value="Dich" onclick="tuDien()">
+<div id="result"></div>
+    <script>
+        let ta=["book","desk","car","mother","father","brother"];
+        let tv=["sách","bàn","ôtô","mẹ","bố","anh trai"];
+        function tuDien() {
+            let a = document.getElementById("word").value;
+            for (let i=0;i<ta.length;i++){
+                if (a == ta[i]){
+                    document.getElementById("result").innerHTML=tv[i];
+                    break;
+                }else {
+                    document.getElementById("result").innerHTML="Không tìm thấy";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
