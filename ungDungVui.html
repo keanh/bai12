@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng vui</title>
+</head>
+<body style="text-align: center">
+    <h1>Type anything slowly</h1>
+    <form name="a">
+        <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();" ></textarea>
+    </form>
+
+<script>
+    var b=new Array();
+    var n="";
+    b[1]='N';b[2]='G';b[3]='U';b[4]='Y';b[5]='Ễ';b[6]='N';b[7]=' ';b[8]='K';b[9]='Ế';b[10]=' ';b[11]='A';b[12]='N';b[13]='H';b[14]=' ';
+    
+    function typeTextarea() {
+        t=document.a.txt.value;
+        if (t.length>0){
+            for (let i=1;i<=t.length;i++){
+                n = n + b[i];
+                if ( i == 14){
+                    document.a.txt.value="";
+                    n="";
+                }
+            }
+        }
+        document.a.txt.value = n;
+        n="";
+        setTimeout("typeTextarea()",1);
+    }
+
+</script>
+</body>
+</html>
