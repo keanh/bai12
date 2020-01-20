@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 1</title>
+</head>
+<body>
+    <script>
+        let daySo = Array();
+        function input() {
+            let number;
+            do{
+                number = prompt("Nhập số (Nhập q để kết thúc)");
+                if (number != "q") {
+                    daySo.push(number);
+                }
+            }while(number !== "q");
+        }
+
+        function tinhTong() {
+            let tong=0,tb=0;
+            for (let i=0;i<daySo.length;i++){
+                tong += Number(daySo[i]);
+                tb= tong / daySo.length;
+            }
+            document.write("Trung bình của dãy số là: " + tb + "<br>");
+        }
+
+        function soSanh() {
+            for (let i=0;i<daySo.length;i++){
+                if (daySo[i]>=10){
+                    document.write(daySo[i] + "<br>");
+                }
+            }
+        }
+
+        function timSLN() {
+            let max=0;
+            let temp=0;
+            for (let i=0;i<daySo.length;i++) {
+                if (max < daySo[i]) {
+                    max = daySo[i];
+                    temp = i;
+                }
+            }
+                document.write("Số lớn nhất là: " + max + " ở vị trí: " + temp );
+        }
+
+        function daoNguoc() {
+            for (let i=0;i<daySo.length;i++){
+                document.write(daySo.reverse(','));
+                break;
+            }
+        }
+
+        function demSoNguyenAm() {
+            let count=0;
+            for (let i=0;i<daySo.length;i++){
+                if (daySo[i]<0){
+                    count++;
+                }
+            }
+            document.write("Có " + count +" số nguyên âm");
+        }
+        
+        function timSoNguyenV() { //99 là V
+            let count=0;
+            for (let i=0;i<daySo.length;i++){
+                if (daySo[i] == 99){
+                    document.write("99 is in the array.");
+                    count++;
+                }
+            }
+            if (count <= 0){
+                document.write("99 is not in the array");
+            }
+        }
+
+        function sapXepTheoThuTuGiamDan() {
+            daySo.sort(function (a,b) {
+                return b-a;
+            });
+            document.write(daySo);
+        }
+
+        function themMang() {
+            let daySo1=[1,2,3,4,5,6,7,8,9,10];
+            let daySo2=daySo1.concat(daySo);
+            document.write("Thêm 2 dãy số: " + daySo2);
+        }
+
+        function xoaPhanTuV() {
+            count=0;
+            for (let i=0;i<daySo.length;i++){
+                if (daySo[i] == 99){
+                    daySo.splice(i,1);
+                    document.write(daySo);
+                    count++;
+                }
+            }
+            if (count <= 0){
+                document.write("99 is not in the array");
+            }
+        }
+         function main(){
+            input();
+            //tinhTong();
+            //soSanh();
+             //timSLN();
+             //daoNguoc();
+             //demSoNguyenAm();
+             //timSoNguyenV();
+             //sapXepTheoThuTuGiamDan();
+             //themMang();
+             xoaPhanTuV();
+        }
+        main();
+    </script>
+</body>
+</html>
