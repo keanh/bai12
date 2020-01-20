@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập mảng 2</title>
+</head>
+<body>
+    <script>
+        /*let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        for (var i in a){
+            document.write( "<br>" + "row " +i );
+            for (var j in a[i]){
+                document.write("<br>" + a[i][j]);
+            }
+        }*/
+
+        function daoNguoc() {
+            let array = ['c', 's', 'c', '2', '6', '1'];
+            document.write(array.reverse());
+        }
+
+        let chuoiKiTu= Array();
+        function input() {
+
+            let kiTu;
+            do {
+                kiTu = prompt("Nhập các kí tự (Nhập quit để kết thúc)");
+                if (kiTu !== "quit"){
+                    chuoiKiTu.push(kiTu);
+                }
+            }while (kiTu !== "quit");
+        }
+
+        function demSoKiTu() {
+            let count=0;
+            for (let i=0;i<chuoiKiTu.length;i++){
+                if (isNaN(chuoiKiTu[i])){
+                }else{
+                    count++;
+                }
+            }
+            if (count >0){
+                document.write(count);
+            }
+        }
+
+        function demSoTu() {
+            chuoiKiTu=(prompt("Nhập"));
+            let res=chuoiKiTu.split(" ");
+            let count=0;
+            for (let i=0;i<res.length;i++){
+                if (isNaN(res[i])){
+                    count++;
+                }
+            }
+            if (count >0){
+                document.write(count);
+            }
+        }
+
+        function kiemTraHaiChuoi() {
+            let arr1 = prompt("Nhập chuỗi 1");
+            let arr2 = prompt("Nhập chuỗi 2");
+            let res1 = arr1.split("");
+            let res2 = arr2.split("");
+            alert(res1);
+            alert(res2);
+            let count = 0;
+            if (res1.length === res2.length) {
+                for (let i = 0; i < res1.length; i++) {
+                    if (res1[i] === res2[i]) {
+                        count++;
+                    }
+                }
+                if (count === res1.length) {
+                    alert("Giống nhau");
+                } else {
+                    alert("Khác nhau");
+                }
+
+            }
+        }
+
+        function thayThe() {
+            let arr = prompt("Nhập");
+            let res = arr.split("");
+            //alert(res);
+            for (let i=0;i<res.length;i++){
+                if (res[i] === "-"){
+                    res[i] = "_";
+                }
+            }
+            alert(res);
+        }
+        function main() {
+            //daoNguoc();
+            //input();
+            //demSoKiTu();
+            //demSoTu();
+            //kiemTraHaiChuoi();
+            thayThe();
+        }
+
+        main();
+
+    </script>
+</body>
+</html>
